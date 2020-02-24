@@ -22,20 +22,24 @@ download http://downloads.sourceforge.net/project/libjpeg-turbo/1.5.3/$LIBJPEG.t
 download http://downloads.sourceforge.net/project/libpng/libpng15/1.5.30/$LIBPNG.tar.gz $LIBPNG.tar.gz
 download http://download.osgeo.org/libtiff/$LIBTIFF.tar.gz $LIBTIFF.tar.gz
 download http://downloads.webmproject.org/releases/webp/$LIBWEBP.tar.gz $LIBWEBP.tar.gz
-download https://github.com/DanBloomberg/leptonica/releases/download/$LEPTONICA_VERSION/leptonica-$LEPTONICA_VERSION.tar.gz leptonica-$LEPTONICA_VERSION.tar.gz
+#download https://github.com/DanBloomberg/leptonica/releases/download/$LEPTONICA_VERSION/leptonica-$LEPTONICA_VERSION.tar.gz leptonica-$LEPTONICA_VERSION.tar.gz
 
 mkdir -p $PLATFORM
+
+cp /home/docukit-sa/Downloads/leptonica-$LEPTONICA_VERSION.tar.gz /home/docukit-sa/Documents/javacpp-presets/leptonica/cppbuild/leptonica-$LEPTONICA_VERSION.tar.gz
+
 cd $PLATFORM
+
 INSTALL_PATH=`pwd`
 echo "Decompressing archives..."
-tar --totals -xzf ../nasm-$NASM_VERSION.tar.gz
-tar --totals -xzf ../$ZLIB.tar.gz
-tar --totals -xzf ../$GIFLIB.tar.gz
-tar --totals -xzf ../$LIBJPEG.tar.gz
-tar --totals -xzf ../$LIBPNG.tar.gz
-tar --totals -xzf ../$LIBTIFF.tar.gz
-tar --totals -xzf ../$LIBWEBP.tar.gz
-tar --totals -xzf ../leptonica-$LEPTONICA_VERSION.tar.gz
+tar --totals -xvzf ../nasm-$NASM_VERSION.tar.gz
+tar --totals -xvzf ../$ZLIB.tar.gz
+tar --totals -xvzf ../$GIFLIB.tar.gz
+tar --totals -xvzf ../$LIBJPEG.tar.gz
+tar --totals -xvzf ../$LIBPNG.tar.gz
+tar --totals -xvzf ../$LIBTIFF.tar.gz
+tar --totals -xvzf ../$LIBWEBP.tar.gz
+tar --totals -xvzf ../leptonica-$LEPTONICA_VERSION.tar.gz
 
 cd nasm-$NASM_VERSION
 # fix for build with GCC 8.x
